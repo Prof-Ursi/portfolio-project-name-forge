@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Forge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <section>
+        <h1>Name Forge</h1>
+    </section>
+
+    <section>
+        <div id="NameListDiv">
+            <label for="nameList">Choose a name list:</label>
+            <select id="nameList">
+                <option value="sample_names.txt">Test Names</option>
+                <option value="Dark_Souls_Names.txt">Dark Souls Names</option>
+                <option value="French_Male_First_Names.txt">French Male First Names</option>
+            </select></select>
+        </div>
+
+        <!-- <div id="UploadListDiv">
+            <label for="uploadFile">Upload a new list:</label>
+            <input type="file" id="uploadFile">
+            <button onclick="uploadFile()">Upload</button>
+        </div> -->
+
+        <div id="LoadListDiv">
+            <button onclick="loadReferenceList()">Load List</button>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Settings</h2>
+        <div id="SettingsLengthDiv">
+            <label>Length: <input type="number" id="length" min="4" max="12" value="6"></label>
+        </div>
+        <div id="SettingsQuantityDiv">
+            <label>Quantity: <input type="number" id="quantity" min="1" max="50" value="10"></label>
+        </div>
+    </section>
+
+
+    <section>
+        <div id="ReferenceListDiv">
+            <h2>Reference List</h2>
+            <textarea id="referenceList" rows="10"></textarea>
+        </div>
+
+        <div id="GenerateButtonDiv">
+            <button id="generateButton" onclick="generateNames()">Generate</button>
+        </div>
+
+        <div id="GeneratedNamesDiv">
+            <h2>Generated Names</h2>
+            <textarea id="generatedNames" rows="10"></textarea>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Name Generator</h1>
+
+    <label for="nameList">Choose a name list:</label>
+    <select id="nameList"></select>
+    
+    <button onclick="loadReferenceList()">Load List</button>
+
+    <h2>Reference List</h2>
+    <textarea id="referenceList" rows="10"></textarea>
+
+    <h2>Settings</h2>
+    <label>Length: <input type="number" id="length" min="4" max="10" value="6"></label>
+    <label>Quantity: <input type="number" id="quantity" min="1" max="50" value="10"></label>
+    <button onclick="generateNames()">Generate</button>
+
+    <h2>Generated Names</h2>
+    <ul id="generatedNames"></ul>
+
+    <h2>Upload a New List</h2>
+    <input type="file" id="uploadFile">
+    <button onclick="uploadFile()">Upload</button>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
