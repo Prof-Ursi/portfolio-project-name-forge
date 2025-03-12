@@ -15,7 +15,7 @@
     </div>
     
     <div class="container mt-4 transparent">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-md-6">
                 <h2 class="fs-4">Source Lists</h2>
                 <label for="nameList" class="form-label">Choose a name list:</label>
@@ -24,17 +24,23 @@
                     <option value="Dark_Souls_Names.txt">Dark Souls Names</option>
                     <option value="French_Male_First_Names.txt">French Male First Names</option>
                 </select>
-                <button class="btn btn-success mt-2" onclick="loadReferenceList()">Load List</button>
             </div>
             <div class="col-md-6">
                 <h2 class="fs-4">Settings</h2>
                 <label class="form-label">Length: <input type="number" id="length" class="form-control" min="4" max="12" value="6"></label>
                 <label class="form-label">Quantity: <input type="number" id="quantity" class="form-control" min="1" max="50" value="10"></label>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <button class="btn btn-success mt-2" onclick="loadReferenceList()">Load List</button>
+            </div>
+            <div class="col-md-6">
                 <button class="btn btn-success mt-2" id="generateButton" onclick="generateNames()">Generate</button>
             </div>
         </div>
     </div>
-    
+
     <div class="container mt-4 transparent">
         <div class="row align-items-center">
             <div class="col-md-5">

@@ -59,6 +59,7 @@ def generate_names(target_size, quantity, filepath):
 
     # Fichier de sortie
     outfile = "generatedNames.txt"
+    
     f = codecs.open(outfile, "w", "utf-8")
 
     generated_names = []
@@ -86,6 +87,7 @@ def generate_names(target_size, quantity, filepath):
                 total += 1
 
     f.close()
+    generated_names.sort()
     return generated_names
 
 @app.route("/")
