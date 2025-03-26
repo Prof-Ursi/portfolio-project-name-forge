@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Forge - Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Intro Section -->
+    <header class="text-center text-white p-5" style="background: url('static/images/logo.png') center/cover no-repeat;">
+        <h1 class="display-3">Name Forge</h1>
+        <p class="lead">A simple yet effective Markov Chain Name Generator</p>
+        <a href="{{ url_for('generator') }}" class="btn btn-primary btn-lg">Try It Now</a>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Name Forge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Landing Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('generator') }}">Generator</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Feature Section -->
+    <section class="container mt-5">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="static/images/feature1.png" class="img-fluid" alt="Feature 1">
+                <h3>List of Names to Count Matrix</h3>
+                <p>Convert a list of names into a count-based transition matrix.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="static/images/feature2.png" class="img-fluid" alt="Feature 2">
+                <h3>Count Matrix to Probability Matrix</h3>
+                <p>Transform the count matrix into a probability-based model.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="static/images/feature3.png" class="img-fluid" alt="Feature 3">
+                <h3>Probability Matrix to New Names</h3>
+                <p>Generate new names based on statistical analysis.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="container mt-5 text-center">
+        <h2>About This Project</h2>
+        <p>This project was inspired by my passion for procedural name generation in RPGs and storytelling. Name Forge is my way of making a versatile and customizable tool available to fellow creators.</p>
+        <p>Created as a Portfolio Project for Holberton School.</p>
+        <p>Connect with me:</p>
+        <a href="#" class="btn btn-outline-dark">LinkedIn</a>
+        <a href="#" class="btn btn-outline-dark">GitHub</a>
+        <p><a href="https://github.com/myrepo">GitHub Repository</a></p>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

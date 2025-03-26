@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Forge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body { background-color: #e8f5e9; }
+        .container { background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1, h2 { color: #2e7d32; }
+        .btn-success { background-color: #2e7d32; border-color: #2e7d32; }
+        .btn-success:hover { background-color: #1b5e20; }
+        .arrow { text-align: center; font-size: 2rem; color: #2e7d32; }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Name Forge</h1>
+    </div>
+    
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Reference List</h2>
+                <label for="nameList" class="form-label">Choose a name list:</label>
+                <select id="nameList" class="form-select">
+                    <option value="sample_names.txt">Test Names</option>
+                    <option value="Dark_Souls_Names.txt">Dark Souls Names</option>
+                    <option value="French_Male_First_Names.txt">French Male First Names</option>
+                </select>
+                <button class="btn btn-success mt-2" onclick="loadReferenceList()">Load List</button>
+            </div>
+            <div class="col-md-6">
+                <h2>Settings</h2>
+                <label class="form-label">Length: <input type="number" id="length" class="form-control" min="4" max="12" value="6"></label>
+                <label class="form-label">Quantity: <input type="number" id="quantity" class="form-control" min="1" max="50" value="10"></label>
+                <button class="btn btn-success mt-2" id="generateButton" onclick="generateNames()">Generate</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-4">
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <h2>Reference List</h2>
+                <textarea id="referenceList" class="form-control" rows="10"></textarea>
+            </div>
+            <div class="col-md-2 arrow">&rarr;</div>
+            <div class="col-md-5">
+                <h2>Generated Names</h2>
+                <textarea id="generatedNames" class="form-control" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
