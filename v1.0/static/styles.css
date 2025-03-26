@@ -10,13 +10,14 @@
 
 body {
     position:relative;
+    padding-top: 80px;
     height: 100dvh;
     max-width: 800px;
     margin: auto;
     text-align: center;
     font-size: 1rem;
     background-color: rgb(0, 0, 0);
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -51,15 +52,21 @@ h1 {
 h2 {
     color: #5a00be;
     font-family: "alagard";
-}
-
-h3 {
-    color: #5a00be;
-    font-family: "alagard";
     font-size: 2em;
 }
 
+h3 {
+    color: #2e0063;
+    font-family: "alagard";
+    font-size: 1.5em;
+}
 
+
+p {
+    color: #000;
+    font-family: "Orange_Kid";
+    font-size: 1em;
+}
 
 
 textarea {
@@ -79,6 +86,7 @@ textarea {
 .container {
     font-family: "Orange_Kid";
     background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 40px;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);

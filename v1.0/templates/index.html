@@ -7,62 +7,84 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body>
-    <!-- Intro Section -->
-    <header class="text-center text-white p-5" style="background: url('static/images/logo.png') center/cover no-repeat;">
-        <h1 class="display-3">Name Forge</h1>
-        <p class="lead">A simple yet effective Markov Chain Name Generator</p>
-        <a href="{{ url_for('generator') }}" class="btn btn-primary btn-lg">Try It Now</a>
-    </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Name Forge</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Landing Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('generator') }}">Generator</a></li>
-                </ul>
+<body style="padding-top: 10px;">
+    <!-- Presentation & Navbar -->
+    <div class="container transparent mt-3">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <img src="static/images/logo.png" class="img-fluid d-block mx-auto" alt="Name Forge Logo" style="max-width: 100%; height: auto; padding: 5px;">
+            </div>
+            <div class="col-md-7">
+                <h1 id="page-name" class="text-center">Name Forge</h1>
+                <p class="text-center">A simple yet effective Markov Chain Name Generator</p>
             </div>
         </div>
-    </nav>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Landing Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('generator') }}">Generator</a>
+                        </li>
+                    </ul>
+                    <!-- <button class="btn btn-dark" id="darkModeToggle">Dark Mode</button> -->
+                </div>
+            </div>
+        </nav>
+    </div>
 
     <!-- Feature Section -->
-    <section class="container mt-5">
+    <div class="container transparent mt-3">
+        <div class="row text-start">
+            <h2>Features</h2>
+            <p>This project is centered around an algorithm working in three distinct steps that I will describe here.</p>
+        </div>
+
         <div class="row text-center">
             <div class="col-md-4">
                 <img src="static/images/feature1.png" class="img-fluid" alt="Feature 1">
-                <h3>List of Names to Count Matrix</h3>
-                <p>Convert a list of names into a count-based transition matrix.</p>
+                <h3>Trigram Counter</h3>
+                <p>The names are parsed one after the other, each one being read as a succession of blocks of three characters called trigrams. Each trigram is then counted and stored inside a 3D matrix.</p>
             </div>
             <div class="col-md-4">
                 <img src="static/images/feature2.png" class="img-fluid" alt="Feature 2">
-                <h3>Count Matrix to Probability Matrix</h3>
-                <p>Transform the count matrix into a probability-based model.</p>
+                <h3>Matrix Probailizer</h3>
+                <p>Now that the count matrix is finished, the algorithm converts it into a probability-based matrix called a transition matrix, where each trigram encountered during the parsing will be assigned a probability to transition towards any other compatible trigram.</p>
             </div>
             <div class="col-md-4">
                 <img src="static/images/feature3.png" class="img-fluid" alt="Feature 3">
-                <h3>Probability Matrix to New Names</h3>
-                <p>Generate new names based on statistical analysis.</p>
+                <h3>Name Generator</h3>
+                <p>Where the magic happens : generate new names based on the probabilities stored inside the transition matrix.</p>
             </div>
         </div>
-    </section>
-    
+    </div>
+
+
     <!-- About Section -->
-    <section class="container mt-5 text-center">
+    <div class="container transparent mt-3 text-start">
         <h2>About This Project</h2>
-        <p>This project was inspired by my passion for procedural name generation in RPGs and storytelling. Name Forge is my way of making a versatile and customizable tool available to fellow creators.</p>
+        <p>The origin of this project comes from the first time I played Dark Souls 3 several months ago. When I created a new character, I stared blankly at the screen, realizing I didn't have any idea how to name my character, and when I searched on the web for new ideas I was frustrated to not be able to generated names following the same rules as Dark Souls names.
+        <p>Then I remembered the concept of markov chain I encountered several years ago, and it clicked in my head : I want to create my own Name Generator using this algorithm
+        </p>Therefore, Name Forge is aimed to any other gamers, writers, table top RPG player that want to create new names based on preexisting ones.</p>
         <p>Created as a Portfolio Project for Holberton School.</p>
-        <p>Connect with me:</p>
-        <a href="#" class="btn btn-outline-dark">LinkedIn</a>
-        <a href="#" class="btn btn-outline-dark">GitHub</a>
-        <p><a href="https://github.com/myrepo">GitHub Repository</a></p>
-    </section>
-    
+
+        <div class="row text-center">
+            <p>Connect with me:</p>
+            <div class="d-flex justify-content-center gap-3 mt-3">
+                <a href="https://www.linkedin.com/in/aurélien-bouillé-473002166" class="btn btn-outline-dark">LinkedIn</a>
+                <a href="https://github.com/Prof-Ursi" class="btn btn-outline-dark">GitHub</a>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
