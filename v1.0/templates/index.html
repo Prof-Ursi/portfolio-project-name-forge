@@ -46,21 +46,27 @@
             <p>This project is centered around an algorithm working in three distinct steps that I will describe here.</p>
         </div>
 
-        <div class="row text-center">
-            <div class="col-md-4">
-                <img src="static/images/feature1.png" class="img-fluid" alt="Feature 1">
+        <div class="row text-start mb-4">
+            <div class="col">
+                <img src="static/images/feature1.png" class="img-fluid mb-2 rounded" alt="Feature 1">
                 <h3>Trigram Counter</h3>
                 <p>The names are parsed one after the other, each one being read as a succession of blocks of three characters called trigrams. Each trigram is then counted and stored inside a 3D matrix.</p>
             </div>
-            <div class="col-md-4">
-                <img src="static/images/feature2.png" class="img-fluid" alt="Feature 2">
+        </div>
+
+        <div class="row text-start mb-4">
+            <div class="col">
+                <img src="static/images/feature2.png" class="img-fluid mb-2 rounded" alt="Feature 2">
                 <h3>Matrix Probalizer</h3>
                 <p>Now that the count matrix is finished, the algorithm converts it into a probability-based matrix called a transition matrix, where each trigram encountered during the parsing will be assigned a probability to transition towards any other compatible trigram.</p>
             </div>
-            <div class="col-md-4">
-                <img src="static/images/feature3.png" class="img-fluid" alt="Feature 3">
+        </div>
+
+        <div class="row text-start">
+            <div class="col">
+                <img src="static/images/feature3.png" class="img-fluid mb-2 rounded" alt="Feature 3">
                 <h3>Name Generator</h3>
-                <p>Where the magic happens : generate new names based on the probabilities stored inside the transition matrix.</p>
+                <p>Where the magic happens: generate new names based on the probabilities stored inside the transition matrix.</p>
             </div>
         </div>
     </div>
