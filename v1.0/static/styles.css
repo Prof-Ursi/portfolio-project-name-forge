@@ -8,6 +8,11 @@
     src: url(./fonts/Orange_Kid.otf);
 }
 
+#logo {
+    max-width: 320px; /* Adjust as needed */
+    height: auto;
+}
+
 body {
     position:relative;
     padding-top: 80px;
@@ -65,7 +70,7 @@ h3 {
 p {
     color: #000;
     font-family: "Orange_Kid";
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 
@@ -85,6 +90,7 @@ textarea {
 .btn-success:hover { background-color: #855000; }
 .container {
     font-family: "Orange_Kid";
+    font-size: 1.1em;
     background-color: rgba(255, 255, 255, 0.5);
     padding-top: 40px;
     padding: 10px;
